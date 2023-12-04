@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Agenda de contatos</title>
+</head>
+<h1 class="visually-hidden">Seja Bem-vindo</h1>
+<button class="btn btn-primary float-right m-2 mb-2"  onclick="openAdminPanel()">Gestão Administrativa</button>
+
+
+<div class="container">
+    <div class="contacts-container">
+        <h2 class="text-center">Agenda de contatos</h2>
+        <div id="contactsList"></div>
+        <div class="btn-group">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addContactModal">Adicionar contato</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addContactModalLabel">Adicionar contato</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addContactForm">
+                    <div class="form-group">
+                        <label for="contactName">Nome:</label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Telefone:</label>
+                        <input type="tel" class="form-control" id="contactPhone" pattern="[0-9]+" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="addContact()">Adicionar contato</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+  <button type="button" class=" btn btn-primary mb-3 btn-block fixed-bottom " onclick="sair()">Sair</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="../js/home.js"></script>
+
+</body>
+</html>
